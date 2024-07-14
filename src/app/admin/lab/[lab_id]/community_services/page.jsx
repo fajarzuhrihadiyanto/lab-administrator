@@ -58,7 +58,7 @@ const NewCommunityServiceRow = ({ lab_id, professors, setCommunityServices, setI
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data added successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil ditambahkan' })
                 setCommunityServices(cs => [...cs, data.data.community_service])
                 setIsEdit(isEdit => [...isEdit, false])
                 resetForm()
@@ -166,7 +166,7 @@ const Page = ({ params }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data updated successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil diupdate' })
                 setIsEdit(isEdit => isEdit.map(() => false))
                 setCommunityServices(data => data.map(cs => cs.id === id ? {...cs, ...values} : cs))
             }
@@ -194,7 +194,7 @@ const Page = ({ params }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data deleted successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil dihapus' })
                 setCommunityServices(data => data.filter(lab => lab.id !== id))
                 setIsEdit(isEdit => isEdit.slice(0, -1))
             }
@@ -205,7 +205,7 @@ const Page = ({ params }) => {
     }
 
     const onDelete = id => () => {
-        setAlertData({ title : 'Delete Confirmation', message: 'Are u sure u wanna delete this data ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
+        setAlertData({ title : 'Konfirmasi Hapus Data', message: 'Apakah anda yakin ingin menghapus data ini ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
         onOpen()
     }
 

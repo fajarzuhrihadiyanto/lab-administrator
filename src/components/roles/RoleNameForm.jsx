@@ -30,7 +30,7 @@ const RoleNameForm = ({ role, setData }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data deleted successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil dihapus' })
                 setData(data => data.filter(role => role.id !== id))
             }
         } catch (error) {
@@ -40,7 +40,7 @@ const RoleNameForm = ({ role, setData }) => {
     }
 
     const onDelete = id => () => {
-        setAlertData({ title : 'Delete Confirmation', message: 'Are u sure u wanna delete this data ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
+        setAlertData({ title : 'Konfirmasi Hapus Data', message: 'Apakah anda yakin ingin menghapus data ini ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
         onOpen()
     }
 
@@ -64,7 +64,7 @@ const RoleNameForm = ({ role, setData }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data has been updated'})
+                setAlertData({ title: 'Sukses', message: 'Data berhasil diupdate'})
             }
         } catch (error) {
             onOpen()

@@ -52,7 +52,7 @@ const Page = ({ params }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data deleted successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil dihapus' })
                 setProfessors(data => data.filter(lab => lab.id !== id))
             }
         } catch (error) {
@@ -62,7 +62,7 @@ const Page = ({ params }) => {
     }
 
     const onDelete = id => () => {
-        setAlertData({ title : 'Delete Confirmation', message: 'Are u sure u wanna delete this data ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
+        setAlertData({ title : 'Konfirmasi Hapus Data', message: 'Apakah anda yakin ingin menghapus data ini ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
         onOpen()
     }
 

@@ -32,7 +32,7 @@ const LabRole = ({ role, role_lab, labs }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data has been updated'})
+                setAlertData({ title: 'Sukses', message: 'Data berhasil diupdate'})
             }
         } catch (error) {
             onOpen()

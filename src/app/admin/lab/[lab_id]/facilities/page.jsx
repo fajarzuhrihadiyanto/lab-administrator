@@ -56,7 +56,7 @@ const NewFacilityRow = ({ lab_id, setFacilities, setIsEdit, onOpen, setAlertData
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data added successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil ditambahkan' })
                 setFacilities(facility => [...facility, data.data.facility])
                 setIsEdit(isEdit => [...isEdit, false])
                 resetForm()
@@ -141,7 +141,7 @@ const Page = ({ params }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data updated successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil diupdate' })
                 setIsEdit(isEdit => isEdit.map(() => false))
                 setFacilities(data => data.map(facility => facility.id === id ? {...facility, ...values} : facility))
             }
@@ -169,7 +169,7 @@ const Page = ({ params }) => {
                 setAlertData({ title: 'Error', message: data.message })
             } else {
                 onOpen()
-                setAlertData({ title: 'Success', message: 'Data deleted successfully' })
+                setAlertData({ title: 'Sukses', message: 'Data berhasil dihapus' })
                 setFacilities(data => data.filter(lab => lab.id !== id))
                 setIsEdit(isEdit => isEdit.slice(0, -1))
             }
@@ -180,7 +180,7 @@ const Page = ({ params }) => {
     }
 
     const onDelete = id => () => {
-        setAlertData({ title : 'Delete Confirmation', message: 'Are u sure u wanna delete this data ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
+        setAlertData({ title : 'Konfirmasi Hapus Data', message: 'Apakah anda yakin ingin menghapus data ini ?', isDangerous: true, cancelable: true, onConfirm: onConfirm(id)})
         onOpen()
     }
 
